@@ -12,9 +12,9 @@ class ViewController: UIViewController{
     
     @IBOutlet weak var result:  UITextField!
     
-    @IBOutlet weak var result_1: UILabel!
+    @IBOutlet weak var result_1: UITextField!
     
-    @IBOutlet weak var result_2: UILabel!
+    @IBOutlet weak var result_2: UITextField!
     
     override func viewDidLoad() {
         
@@ -182,4 +182,246 @@ class ViewController: UIViewController{
     
   
     
+
+@IBAction func dot(_ sender: Any) {
+    
+    result.text = result.text! + "."
+    
+    judge = 1
+    
+}
+
+@IBAction func clear(_ sender: Any) {
+    
+    result.text = ""
+    
+    re = 0
+    
+}
+
+@IBAction func minus(_ sender: Any) {
+    
+    if add == 1{
+        
+        let a = Double(result_1.text!)!
+        
+        let b = Double(result.text!)!
+        
+        let c = a - b
+        
+        result_1.text = String(c)
+        
+        result.text = ""
+        
+        number = 1
+        
+        re = 1
+        
+    }else{
+        
+        if result.text == ""{
+            
+            result.text = "0"
+            
+        }else {
+            
+            let x = Double(result.text!)!
+            
+            result_1.text = String(x)
+            
+            result.text = ""
+            
+            number = 1
+            
+            re = 0
+            
+        }
+        
+    }
+    
+}
+
+@IBAction func plus(_ sender: Any) {
+    
+    if add == 1{
+        
+        let a = Double(result_1.text!)!
+        
+        let b = Double(result.text!)!
+        
+        let c = a + b
+        
+        result_1.text = String(c)
+        
+        result.text = ""
+        
+        number = 2
+        
+        re = 1
+        
+    }else{
+        
+        if result.text == ""{
+            
+            result.text = "0"
+            
+        }else {
+            
+            let x = Double(result.text!)!
+            
+            result_1.text = String(x)
+            
+            result.text = ""
+            
+            number = 2
+            
+            re = 0
+            
+        }
+        
+    }
+    
+}
+
+@IBAction func multiply(_ sender: Any) {
+    
+    if add == 1{
+        
+        let a = Double(result_1.text!)!
+        
+        let b = Double(result.text!)!
+        
+        let c = a * b
+        
+        result_1.text = String(c)
+        
+        result.text = ""
+        
+        number = 3
+        
+        re = 1
+        
+    }else{
+        
+        if result.text == ""{
+            
+            result.text = "0"
+            
+        }else {
+            
+            let x = Double(result.text!)!
+            
+            result_1.text = String(x)
+            
+            result.text = ""
+            
+            number = 3
+            
+            re = 0
+            
+            add = 1
+            
+        }
+        
+    }
+    
+}
+
+@IBAction func divide(_ sender: Any) {
+    
+    if add == 1{
+        
+        let a = Double(result_1.text!)!
+        
+        let b = Double(result.text!)!
+        
+        let c = a / b
+        
+        result_1.text = String(c)
+        
+        result.text = ""
+        
+        number = 4
+        
+        re = 1
+        
+    }else{
+        
+        if result.text == ""{
+            
+            result.text = "0"
+            
+        }else {
+            
+            let y = Double(result.text!)!
+            
+            result_1.text = String(y)
+            
+            result.text = ""
+            
+            number = 4
+            
+            re = 0
+            
+            add = 1
+            
+        }
+        
+    }
+    
+}
+
+
+
+@IBAction func equal(_ sender: Any) {
+    
+    var d:Double
+    
+    var c:Double
+    let x=Double(result_1.text!)!
+    
+    c = (result.text! as NSString).doubleValue
+    
+    if number == 1 {
+        
+        d = x - c
+        
+    }else if number == 2 {
+        
+        d = x + c
+        
+    }else if number == 3 {
+        
+        d = x * c
+        
+    }else if number == 4 {
+        
+        d = x / (c)
+        
+    }else {
+        
+        d = 1000
+        
+    }
+    
+    result_2.text = String(c)
+    
+    if judge == 1{
+        
+        result.text = String(format:"%f", d)
+        
+    }else {
+        
+        result.text = String(format:"%.0f", d)
+        
+    }
+    
+    re = 1
+    
+    judge = 0
+    
+    add = 0
+    
+}
+
 }
