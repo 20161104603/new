@@ -352,7 +352,7 @@ class ViewController: UIViewController{
             result.text = "0"
             
         }else {
-            
+           
             let y = Double(result.text!)!
             
             result_1.text = String(y)
