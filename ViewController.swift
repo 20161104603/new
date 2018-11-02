@@ -1,427 +1,260 @@
+
 //
 //  ViewController.swift
-//  new
+//  asd
 //
-//  Created by 20161104603 on 2018/9/26.
-//  Copyright © 2018年 20161104603. All rights reserved.
+//  Created by 20161104609 on 2018/10/31.
+//  Copyright © 2018 20161104609. All rights reserved.
 //
 
+//
 import UIKit
 
-class ViewController: UIViewController{
+class ViewController: UIViewController {
     
-    @IBOutlet weak var result:  UITextField!
+    var temp : Double = 0
+    var temp1 = 0
+    var judge = 0
+    var flag = 0
+    var add = 0
+    var sum = 0.0
+    var sum1 : Double = 0
+    var i = 0
     
-    @IBOutlet weak var result_1: UITextField!
+    @IBOutlet weak var caculaterDisplay: UITextField!
+    var re = 0
     
-    @IBOutlet weak var result_2: UITextField!
+    @IBAction func button_1(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "1"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"1"
+        }
+    }
+    
+    
+    @IBAction func button_2(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "2"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"2"
+        }
+    }
+    
+    
+    @IBAction func button_3(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "3"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"3"
+        }
+    }
+    
+    
+    @IBAction func button_4(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "4"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"4"
+        }
+    }
+    
+    
+    @IBAction func button_5(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "5"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"5"
+        }
+    }
+    
+    
+    @IBAction func button_6(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "6"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"6"
+        }
+    }
+    
+    
+    @IBAction func button_7(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "7"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"7"
+        }
+    }
+    
+    
+    @IBAction func button_8(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "8"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"8"
+        }
+    }
+    
+    
+    @IBAction func button_9(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "9"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"9"
+        }
+    }
+    
+    
+    @IBAction func button_0(_ sender: Any) {
+        if re == 1{
+            caculaterDisplay.text = "0"
+        }else{
+            caculaterDisplay.text = caculaterDisplay.text!+"0"
+        }
+    }
+    
+    
+    @IBAction func button_delete(_ sender: Any) {
+        caculaterDisplay.text = ""
+    }
+    
+    
+    @IBAction func button_sum(_ sender: Any) {
+        switch flag {
+        case 1:
+            sum = sum + Double(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(sum)"
+            i = 0
+        case 2:
+            sum = sum - Double(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(sum)"
+            i = 0
+            
+        case 3:
+            sum = sum * Double(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(sum)"
+            i = 0
+        case 4:
+            if caculaterDisplay.text=="0"
+            {
+                break
+            }else{
+                sum = sum / Double(caculaterDisplay.text!)!
+                caculaterDisplay.text = "\(sum)"
+            }
+            i = 0
+            
+        default:
+            break
+        }
+        
+        caculaterDisplay.text = String()
+        if judge == 0 {
+            caculaterDisplay.text = String(format:"%.1f",sum)
+        }else {
+            caculaterDisplay.text = String(format:"%d",sum)
+        }
+    }
+    
+    @IBAction func button_dot(_ sender: Any) {
+        caculaterDisplay.text = caculaterDisplay.text! + "."
+        judge = 0
+    }
+    @IBAction func clear(_ sender: Any) {
+        
+        caculaterDisplay.text = ""
+        
+        re = 0
+        
+    }
+    
+    @IBAction func button_add(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        if(i == 0)
+        {
+            caculaterDisplay.text = ""
+            sum = temp
+        }
+        i=i+1
+        if(i == 2)
+        {
+            sum = sum + Double(caculaterDisplay.text!)!
+            caculaterDisplay.text = ""
+        }
+        i = 1
+        flag = 1
+    }
+    
+    
+    @IBAction func button_minus(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        if(i == 0)
+        {
+            caculaterDisplay.text = ""
+            sum = temp
+        }
+        i=i+1
+        if(i == 2)
+        {
+            sum = sum - Double(caculaterDisplay.text!)!
+            caculaterDisplay.text = ""
+        }
+        i = 1
+        flag = 2
+    }
+    
+    
+    @IBAction func button_multiply(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        if(i == 0)
+        {
+            caculaterDisplay.text = ""
+            sum = temp
+        }
+        i=i+1
+        if(i == 2)
+        {
+            sum = sum * Double(caculaterDisplay.text!)!
+            caculaterDisplay.text = ""
+        }
+        i = 1
+        flag = 3
+    }
+    
+    
+    @IBAction func button_divide(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        if(i == 0)
+        {
+            caculaterDisplay.text = ""
+            sum = temp
+        }
+        i=i+1
+        if(i == 2)
+        {
+            sum = sum / Double(caculaterDisplay.text!)!
+            caculaterDisplay.text = ""
+        }
+        i = 1
+        flag = 4
+    }
+    
+   
+ 
+    
+    
+    @IBAction func square(_ sender: Any) {
+        let count3 = Double(caculaterDisplay.text!)!
+        let count4 = count3 * count3
+        caculaterDisplay.text = String(count4)
+    }
+    
+
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view, typically from a nib.
-        
     }
     
-    override func didReceiveMemoryWarning() {
-        
-        super.didReceiveMemoryWarning()
-        
-        // Dispose of any resources that can be recreated.
-        
-    }
     
-    var number = 0//判断加减乘除
-    
-    var judge = 0//决定输出数字的位数
-    
-    var add = 0
-    
-    var re = 0//判断result.text前是否存在符号
-    
-    @IBAction func number1(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "1"
-            
-        }else{
-            
-            result.text = result.text! + "1"
-            
-        }
-        
-    }
-    
-    @IBAction func number2(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "2"
-            
-        }else{
-            
-            result.text = result.text! + "2"
-            
-        }
-        
-    }
-    
-    @IBAction func number3(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "3"
-            
-        }else{
-            
-            result.text = result.text! + "3"
-            
-        }
-        
-    }
-    
-    @IBAction func number4(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "4"
-            
-        }else{
-            
-            result.text = result.text! + "4"
-            
-        }
-        
-    }
-    
-    @IBAction func number5(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "5"
-            
-        }else{
-            
-            result.text = result.text! + "5"
-            
-        }
-        
-    }
-    
-    @IBAction func number6(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "6"
-            
-        }else{
-            
-            result.text = result.text! + "6"
-            
-        }
-        
-    }
-    
-    @IBAction func number7(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "7"
-            
-        }else{
-            
-            result.text = result.text! + "7"
-            
-        }
-        
-    }
-    
-    @IBAction func number8(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "8"
-            
-        }else{
-            
-            result.text = result.text! + "8"
-            
-        }
-        
-    }
-    
-    @IBAction func number9(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "9"
-            
-        }else{
-            
-            result.text = result.text! + "9"
-            
-        }
-        
-    }
-    
-    @IBAction func number0(_ sender: Any) {
-        
-        if re == 1{
-            
-            result.text = "0"
-            
-        }else{
-            
-            result.text = result.text! + "0"
-            
-        }
-        
-    }
-    
-  
-    
-
-@IBAction func dot(_ sender: Any) {
-    
-    result.text = result.text! + "."
-    
-    judge = 1
-    
-}
-
-@IBAction func clear(_ sender: Any) {
-    
-    result.text = ""
-    
-    re = 0
-    
-}
-
-@IBAction func minus(_ sender: Any) {
-    
-    if add == 1{
-        
-        let a = Double(result_1.text!)!
-        
-        let b = Double(result.text!)!
-        
-        let c = a - b
-        
-        result_1.text = String(c)
-        
-        result.text = ""
-        
-        number = 1
-        
-        re = 1
-        
-    }else{
-        
-        if result.text == ""{
-            
-            result.text = "0"
-            
-        }else {
-            
-            let x = Double(result.text!)!
-            
-            result_1.text = String(x)
-            
-            result.text = ""
-            
-            number = 1
-            
-            re = 0
-            
-        }
-        
-    }
-    
-}
-
-@IBAction func plus(_ sender: Any) {
-    
-    if add == 1{
-        
-        let a = Double(result_1.text!)!
-        
-        let b = Double(result.text!)!
-        
-        let c = a + b
-        
-        result_1.text = String(c)
-        
-        result.text = ""
-        
-        number = 2
-        
-        re = 1
-        
-    }else{
-        
-        if result.text == ""{
-            
-            result.text = "0"
-            
-        }else {
-            
-            let x = Double(result.text!)!
-            
-            result_1.text = String(x)
-            
-            result.text = ""
-            
-            number = 2
-            
-            re = 0
-            
-        }
-        
-    }
-    
-}
-
-@IBAction func multiply(_ sender: Any) {
-    
-    if add == 1{
-        
-        let a = Double(result_1.text!)!
-        
-        let b = Double(result.text!)!
-        
-        let c = a * b
-        
-        result_1.text = String(c)
-        
-        result.text = ""
-        
-        number = 3
-        
-        re = 1
-        
-    }else{
-        
-        if result.text == ""{
-            
-            result.text = "0"
-            
-        }else {
-            
-            let x = Double(result.text!)!
-            
-            result_1.text = String(x)
-            
-            result.text = ""
-            
-            number = 3
-            
-            re = 0
-            
-            add = 1
-            
-        }
-        
-    }
-    
-}
-
-@IBAction func divide(_ sender: Any) {
-    
-    if add == 1{
-        
-        let a = Double(result_1.text!)!
-        
-        let b = Double(result.text!)!
-        
-        let c = a / b
-        
-        result_1.text = String(c)
-        
-        result.text = ""
-        
-        number = 4
-        
-        re = 1
-        
-    }else{
-        
-        if result.text == ""{
-            
-            result.text = "0"
-            
-        }else {
-           
-            let y = Double(result.text!)!
-            
-            result_1.text = String(y)
-            
-            result.text = ""
-            
-            number = 4
-            
-            re = 0
-            
-            add = 1
-            
-        }
-        
-    }
-    
-}
-
-
-
-@IBAction func equal(_ sender: Any) {
-    
-    var d:Double
-    
-    var c:Double
-    let x=Double(result_1.text!)!
-    
-    c = (result.text! as NSString).doubleValue
-    
-    if number == 1 {
-        
-        d = x - c
-        
-    }else if number == 2 {
-        
-        d = x + c
-        
-    }else if number == 3 {
-        
-        d = x * c
-        
-    }else if number == 4 {
-        
-        d = x / (c)
-        
-    }else {
-        
-        d = 1000
-        
-    }
-    
-    result_2.text = String(c)
-    
-    if judge == 1{
-        
-        result.text = String(format:"%f", d)
-        
-    }else {
-        
-        result.text = String(format:"%.0f", d)
-        
-    }
-    
-    re = 1
-    
-    judge = 0
-    
-    add = 0
-    
-}
-
 }
