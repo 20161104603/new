@@ -3,8 +3,8 @@
 //  ViewController.swift
 //  asd
 //
-//  Created by 20161104609 on 2018/10/31.
-//  Copyright © 2018 20161104609. All rights reserved.
+//  Created by 20161104603 on 2018/10/31.
+//  Copyright © 2018 20161104603. All rights reserved.
 //
 
 //
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var flag = 0
     var add = 0
     var sum = 0.0
-    var sum1 : Double = 0
+
     var i = 0
     
     @IBOutlet weak var caculaterDisplay: UITextField!
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
     @IBAction func button_delete(_ sender: Any) {
         caculaterDisplay.text = ""
     }
-    
+
     
     @IBAction func button_sum(_ sender: Any) {
         switch flag {
@@ -137,7 +137,7 @@ class ViewController: UIViewController {
         case 4:
             if caculaterDisplay.text=="0"
             {
-                break
+        break
             }else{
                 sum = sum / Double(caculaterDisplay.text!)!
                 caculaterDisplay.text = "\(sum)"
@@ -244,9 +244,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func square(_ sender: Any) {
-        let count3 = Double(caculaterDisplay.text!)!
-        let count4 = count3 * count3
-        caculaterDisplay.text = String(count4)
+        let count1 = Double(caculaterDisplay.text!)!
+        let count2 = count1 * count1
+        caculaterDisplay.text = String(count2)
     }
     
 
