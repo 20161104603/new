@@ -165,6 +165,9 @@ class ViewController: UIViewController {
     @IBAction func button_dot(_ sender: Any) {
         caculaterDisplay.text = caculaterDisplay.text! + "."
         judge = 0
+    
+        
+        
         
     }
     @IBAction func clear(_ sender: Any) {
