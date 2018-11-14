@@ -124,7 +124,7 @@ class ViewController: UIViewController {
         case 1:
             sum = sum + Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum)"
-            i = 0
+           i = 0
         case 2:
             sum = sum - Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum)"
@@ -147,18 +147,25 @@ class ViewController: UIViewController {
         default:
             break
         }
-        
         caculaterDisplay.text = String()
+        
         if judge == 0 {
-            caculaterDisplay.text = String(format:"%.1f",sum)
-        }else {
-            caculaterDisplay.text = String(format:"%d",sum)
+            caculaterDisplay.text = String(format:"%f",sum)
+            while (caculaterDisplay.text?.last == "0")
+            {
+                caculaterDisplay.text?.removeLast()
+            }
+            if(caculaterDisplay.text?.last == ".")
+            {
+                caculaterDisplay.text?.removeLast()
+            }
         }
     }
     
     @IBAction func button_dot(_ sender: Any) {
         caculaterDisplay.text = caculaterDisplay.text! + "."
         judge = 0
+        
     }
     @IBAction func clear(_ sender: Any) {
         
