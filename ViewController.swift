@@ -117,6 +117,7 @@ class ViewController: UIViewController {
     
     @IBAction func button_delete(_ sender: Any) {
         caculaterDisplay.text = ""
+        d = 1
     }
 
     
@@ -182,7 +183,7 @@ class ViewController: UIViewController {
     @IBAction func clear(_ sender: Any) {
         
         caculaterDisplay.text = ""
-        d = 0 
+        d = 0
         re = 0
         
     }
