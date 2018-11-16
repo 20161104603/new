@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var flag = 0
     var add = 0
     var sum = 0.0
+    var d = 0
 
     var i = 0
     
@@ -163,17 +164,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func button_dot(_ sender: Any) {
-        caculaterDisplay.text = caculaterDisplay.text! + "."
+        if caculaterDisplay.text == ""
+        {
+            caculaterDisplay.text = "0."}
+        else{
+            if d == 1
+            {
+                caculaterDisplay.text = caculaterDisplay.text
+            }
+            else{
+                caculaterDisplay.text = caculaterDisplay.text!+"."
+                d = 1
+        }
+        }
         judge = 0
-    
-        
-        
-        
     }
     @IBAction func clear(_ sender: Any) {
         
         caculaterDisplay.text = ""
-        
+        d = 0 
         re = 0
         
     }
