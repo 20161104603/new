@@ -211,13 +211,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtV-qt-7FS">
-                                <rect key="frame" x="155" y="198" width="99" height="42"/>
+                                <rect key="frame" x="155" y="200" width="99" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="+/-"/>
                                 <connections>
-                                    <action selector="button_divide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sTQ-hG-xTj"/>
+                                    <action selector="negavite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ey6-lV-0bw"/>
                                 </connections>
                             </button>
                         </subviews>

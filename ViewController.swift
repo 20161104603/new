@@ -260,20 +260,40 @@ class ViewController: UIViewController {
     }
     
    
- 
+    @IBAction func negavite(_ sender: Any) {
+        let count3 = Double(caculaterDisplay.text!)!
+        let count4 = count3 * (-1)
+        caculaterDisplay.text = String(count4)
+        while (caculaterDisplay.text?.last == "0")
+        {
+            caculaterDisplay.text?.removeLast()
+        }
+        if(caculaterDisplay.text?.last == ".")
+        {
+            caculaterDisplay.text?.removeLast()
+        }
+    
+    }
     
     
     @IBAction func square(_ sender: Any) {
         let count1 = Double(caculaterDisplay.text!)!
         let count2 = count1 * count1
         caculaterDisplay.text = String(count2)
-    }
+        while (caculaterDisplay.text?.last == "0")
+        {
+            caculaterDisplay.text?.removeLast()
+        }
+        if(caculaterDisplay.text?.last == ".")
+        {
+            caculaterDisplay.text?.removeLast()
+        }
     
-
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a  nib.
     }
     
     
