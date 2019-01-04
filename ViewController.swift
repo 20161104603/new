@@ -115,11 +115,9 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func button_delete(_ sender: Any) {
-        caculaterDisplay.text = ""
-        d = 1
-    }
-
+    
+    
+ 
     
     @IBAction func button_sum(_ sender: Any) {
         switch flag {
