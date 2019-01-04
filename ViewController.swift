@@ -12,15 +12,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var temp : Double = 0
-    var temp1 = 0
+    var temp : Double = 0  //sum值转达存储
     var judge = 0
-    var flag = 0
-    var add = 0
+    var flag = 0   //控制加减乘除
     var sum = 0.0
-    var d = 0
-
-    var i = 0
+    var d = 0  // 控制小数点
+    var i = 0 //循环
     
     @IBOutlet weak var caculaterDisplay: UITextField!
     var re = 0
@@ -165,7 +162,9 @@ class ViewController: UIViewController {
     @IBAction func button_dot(_ sender: Any) {
         if caculaterDisplay.text == ""
         {
-            caculaterDisplay.text = "0."}
+            caculaterDisplay.text = "0."
+            d=1
+        }
         else{
             if d == 1
             {
